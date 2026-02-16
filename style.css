@@ -634,58 +634,6 @@ h4 {
     }
 }
 
-/* DESKTOP (pantallas grandes) */
-@media (min-width: 1024px) {
-    .container {
-        max-width: 1200px;
-    }
-
-    .menu-toggle {
-        display: none;
-    }
-
-    .nav-menu {
-        display: flex;
-        position: static;
-        height: auto;
-        width: auto;
-        background: transparent;
-        flex-direction: row;
-        padding: 0;
-        box-shadow: none;
-    }
-
-    .nav-menu li {
-        margin: 0;
-    }
-
-    .nav-menu a {
-        font-size: 16px;
-        padding: 8px 15px;
-        border-bottom: none;
-    }
-
-    .hero h1 {
-        font-size: 64px;
-    }
-
-    .cards-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .foros-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .contacto-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .precio-card {
-        max-width: 600px;
-        margin: 0 auto 25px;
-    }
-}
 
 /* Para pantallas muy pequeñas */
 @media (max-width: 360px) {
@@ -706,6 +654,161 @@ h4 {
     }
 }
 
+
+/* Pantallas extra grandes (1200px+) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1300px;
+    }
+
+    .hero h1 {
+        font-size: 82px;
+    }
+
+    .cards-grid {
+        gap: 30px;
+    }
+
+    .foros-grid {
+        gap: 30px;
+    }
+}
+
+/* ESTILOS MEJORADOS PARA FOROS */
+.foros-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.foro-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition: var(--transicion);
+    border: 1px solid var(--gris-claro);
+}
+
+.foro-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(26, 61, 109, 0.15);
+}
+
+.foro-header {
+    padding: 15px 20px;
+    color: white;
+}
+
+.foro-header h3 {
+    margin: 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.foro-header .estrella {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.foro-content {
+    padding: 20px;
+}
+
+.paises {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: var(--gris-oscuro);
+    background: var(--gris-claro);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.paises i {
+    color: var(--dorado);
+    margin-right: 5px;
+}
+
+.topicos {
+    margin-bottom: 15px;
+}
+
+.topico {
+    margin-bottom: 12px;
+    padding: 10px;
+    background: var(--blanco-roto);
+    border-radius: 8px;
+    border-left: 3px solid var(--dorado);
+}
+
+.topico-label {
+    display: inline-block;
+    font-weight: 700;
+    color: var(--azul-diplomatico);
+    margin-bottom: 4px;
+    font-size: 13px;
+}
+
+.topico p {
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0;
+    color: var(--gris-oscuro);
+}
+
+.descripcion {
+    font-size: 14px;
+    background: rgba(198, 161, 59, 0.05);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px dashed var(--dorado);
+}
+
+.descripcion p {
+    margin: 0;
+    color: var(--gris-oscuro);
+}
+
+.descripcion strong {
+    color: var(--azul-diplomatico);
+}
+
+/* Foro destacado (ONU Mujeres) */
+.foro-destacado {
+    border: 2px solid var(--dorado);
+    position: relative;
+}
+
+.foro-destacado::before {
+    content: "⭐ COMITÉ ESTRELLA";
+    position: absolute;
+    top: -10px;
+    right: 20px;
+    background: var(--dorado);
+    color: var(--azul-diplomatico);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    z-index: 10;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .foros-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Desktop */
 /* DESKTOP (pantallas grandes) - VERSIÓN CORREGIDA */
 @media (min-width: 1024px) {
     .container {
@@ -740,7 +843,7 @@ h4 {
         font-weight: 500;
     }
 
-    /* Hero section - mejor proporcionado */
+    /* Hero section */
     .hero {
         min-height: 90vh;
         padding: 100px 0;
@@ -774,7 +877,7 @@ h4 {
         font-size: 18px;
     }
 
-    /* Secciones - mejor espaciado */
+    /* Secciones */
     .section {
         padding: 80px 0;
     }
@@ -794,25 +897,7 @@ h4 {
         margin: 0 auto 50px;
     }
 
-    /* Modelo section - grid mejorado */
-    .modelo-texto {
-        max-width: 900px;
-        margin: 0 auto 50px;
-        text-align: center;
-    }
-
-    .modelo-texto h3 {
-        font-size: 32px;
-        margin: 30px 0 15px;
-    }
-
-    .modelo-texto p {
-        font-size: 18px;
-        line-height: 1.7;
-        max-width: 800px;
-        margin: 0 auto 20px;
-    }
-
+    /* Cards del modelo */
     .cards-grid {
         grid-template-columns: repeat(4, 1fr);
         gap: 25px;
@@ -821,177 +906,169 @@ h4 {
     }
 
     .card {
-        padding: 35px 25px;
+        padding: 30px 20px;
     }
 
     .card i {
         font-size: 48px;
-        margin-bottom: 20px;
     }
 
     .card h3 {
-        font-size: 22px;
-        margin-bottom: 12px;
+        font-size: 20px;
     }
 
-    .card p {
-        font-size: 18px;
-        line-height: 1.5;
-    }
-
-    /* Foros section */
+    /* FOROS - Versión desktop mejorada */
     .foros-grid {
-        grid-template-columns: repeat(4, 1fr);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 25px;
         max-width: 1100px;
         margin: 0 auto 40px;
     }
 
     .foro-card {
-        min-height: 250px;
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        transition: all 0.3s ease;
+        border: 1px solid #eaeaea;
+        height: fit-content;
+    }
+
+    .foro-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(26, 61, 109, 0.15);
+    }
+
+    .foro-header {
+        padding: 15px 20px;
+        color: white;
+    }
+
+    .foro-header h3 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
         display: flex;
         align-items: center;
+        gap: 8px;
+    }
+
+    .foro-header .estrella {
+        background: rgba(255,255,255,0.3);
+        padding: 2px 8px;
+        border-radius: 20px;
+        font-size: 12px;
+        margin-left: 5px;
     }
 
     .foro-content {
-        padding: 25px;
+        padding: 20px;
     }
 
-    .foro-content h3 {
-        font-size: 20px;
-        margin-bottom: 12px;
+    .topicos {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
     }
 
-    .foro-content p {
-        font-size: 17px;
-        line-height: 1.5;
+    .topico {
+        padding: 12px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        border-left: 3px solid var(--dorado);
     }
 
-    .foro-content .idioma {
+    .topico-label {
+        display: block;
+        font-weight: 700;
+        color: var(--azul-diplomatico);
+        margin-bottom: 5px;
         font-size: 12px;
-        padding: 5px 12px;
+        letter-spacing: 0.5px;
+    }
+
+    .topico p {
+        font-size: 13px;
+        line-height: 1.5;
+        margin: 0;
+        color: #444;
+    }
+
+    .foro-destacado {
+        border: 2px solid var(--dorado);
+        position: relative;
     }
 
     .protocolo-btn {
-        padding: 0;
         text-align: center;
+        margin-top: 40px;
     }
 
     .protocolo-btn .btn {
+        display: inline-block;
         width: auto;
         min-width: 280px;
         padding: 16px 35px;
         font-size: 18px;
-        margin: 0 auto;
     }
 
-    /* Inscripciones section */
+    /* Inscripciones */
     .inscripcion-grid {
         display: grid;
         grid-template-columns: 2fr 1fr;
         gap: 40px;
-        max-width: 1100px;
+        max-width: 1000px;
         margin: 0 auto;
         align-items: start;
     }
 
     .precio-card {
-        padding: 45px 40px;
+        padding: 40px 30px;
         margin-bottom: 0;
-        text-align: left;
+        text-align: center;
     }
 
     .precio-card h3 {
-        font-size: 32px;
-        text-align: center;
+        font-size: 28px;
     }
 
     .precio-card .precio {
-        font-size: 56px;
-        text-align: center;
-    }
-
-    .incluye-lista {
-        padding: 0 20px;
+        font-size: 52px;
     }
 
     .incluye-lista li {
-        font-size: 16px;
-        margin: 15px 0;
-    }
-
-    .incluye-lista i {
-        font-size: 20px;
+        font-size: 15px;
     }
 
     .fechas {
-        padding: 35px 30px;
-        height: fit-content;
+        padding: 30px 25px;
     }
 
     .fechas h3 {
-        font-size: 26px;
-        margin-bottom: 25px;
-    }
-
-    .fecha-item {
-        gap: 20px;
-    }
-
-    .fecha-item i {
         font-size: 24px;
     }
 
-    .fecha-item strong {
-        font-size: 18px;
-    }
-
-    .fecha-item p {
-        font-size: 16px;
-    }
-
-    /* Contacto section */
+    /* Contacto */
     .contacto-grid {
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 30px;
-        max-width: 1000px;
+        max-width: 900px;
         margin: 0 auto;
     }
 
     .contacto-item {
-        padding: 40px 25px;
+        padding: 30px 20px;
     }
 
     .contacto-item i {
-        font-size: 48px;
-        margin-bottom: 20px;
+        font-size: 40px;
     }
 
     .contacto-item h3 {
-        font-size: 24px;
-        margin-bottom: 15px;
-    }
-
-    .contacto-info {
-        font-size: 18px;
-        margin-bottom: 20px;
-    }
-
-    .btn-contacto {
-        padding: 12px 30px;
-        font-size: 16px;
-    }
-
-    .social-links {
-        gap: 12px;
-    }
-
-    .social-link {
-        padding: 12px;
-    }
-
-    .social-link i {
-        font-size: 28px;
+        font-size: 20px;
     }
 
     /* Footer */
@@ -1000,57 +1077,75 @@ h4 {
     }
 
     .footer-logo {
-        font-size: 36px;
+        font-size: 32px;
     }
 
     .footer-logos {
         flex-direction: row;
         justify-content: center;
-        gap: 30px;
+        gap: 20px;
     }
 
-    .logo-temporal {
-        width: 80px;
-        height: 80px;
-    }
-
-    .logo-temporal span {
-        font-size: 40px;
-    }
-
-    .separador {
-        font-size: 30px;
-    }
-
-    .cinu-texto {
-        font-size: 22px;
-    }
-
-    .footer-text {
-        font-size: 18px;
-        margin-top: 15px;
-    }
-
-    .footer-copy {
-        font-size: 15px;
+    .footer-logos img {
+        height: 50px;
     }
 }
 
-/* Pantallas extra grandes (1200px+) */
+/* Pantallas grandes (1400px+) */
 @media (min-width: 1400px) {
     .container {
         max-width: 1300px;
     }
 
-    .hero h1 {
-        font-size: 82px;
-    }
-
-    .cards-grid {
-        gap: 30px;
-    }
-
     .foros-grid {
+        grid-template-columns: repeat(4, 1fr);
         gap: 30px;
+        max-width: 1300px;
+    }
+}
+
+/* Pantallas grandes */
+@media (min-width: 1400px) {
+    .foros-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+/* ESTILOS PARA EL LOGO EN NAVBAR */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-logo {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Ajuste para móvil */
+@media (max-width: 768px) {
+    .nav-logo {
+        height: 35px;
+    }
+    
+    .logo-container {
+        gap: 8px;
+    }
+}
+
+/* Ajuste para pantallas muy pequeñas */
+@media (max-width: 360px) {
+    .nav-logo {
+        height: 30px;
+    }
+    
+    .logo {
+        font-size: 18px;
+    }
+    
+    .logo span {
+        font-size: 22px;
     }
 }
